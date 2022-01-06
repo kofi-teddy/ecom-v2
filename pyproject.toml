@@ -6,6 +6,9 @@ authors = ["kofi-teddy <agudogot@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+Django = "^4.0.1"
+django-decouple = "^2.1"
+dj-database-url = "^0.5.0"
 
 [tool.poetry.dev-dependencies]
 
