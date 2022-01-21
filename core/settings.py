@@ -109,4 +109,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Email backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# Cart session key
+CART_SESSION_ID = 'cart'
+
