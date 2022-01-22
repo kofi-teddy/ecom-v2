@@ -4,6 +4,10 @@ from apps.shop.models import Product
 
 
 class Order(models.Model):
+    '''
+    Customer information and paid boolean field to indicate paid and 
+    unpaid orders with default to False.
+    '''
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
@@ -25,6 +29,9 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
+    '''
+    Stores the product, quantity and price paid for each item.
+    '''
     order = models.ForeignKey(
         Order,
         related_name='order_items',
