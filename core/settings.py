@@ -1,3 +1,5 @@
+import braintree
+
 import os
 from pathlib import Path
 
@@ -118,4 +120,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Cart session key
 CART_SESSION_ID = 'cart'
+
+
+# Payment gate way
+BRAINTREE_CONF = braintree.Configuration(
+    braintree.Environment.Sandbox,
+    config('BRAINTREE_MERCHANT_ID'),
+    config('BRAINTREE_PUBLIC_KEY'),
+    config('BRAINTREE_PRIVATE_KEY'),
+)
 
