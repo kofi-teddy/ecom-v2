@@ -34,5 +34,8 @@ def order_create(request):
 
 @staff_member_required
 def admin_order_detail(request, order_id):
+    '''
+    Custom display of orders in admin site.
+    '''
     order = get_object_or_404(Order, id=order_id)
     return render(request, 'admin/orders/order/detail.html', {'order': order})
