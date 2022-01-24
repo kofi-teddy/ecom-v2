@@ -3,7 +3,7 @@ import datetime
 
 from django.http import HttpResponse
 from django.contrib import admin
-from django.utils import reverse
+from django.urls import reverse
 from django.utils.safestring import mark_safe
 
 from .models import Order, OrderItem

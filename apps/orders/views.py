@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.admin.views.decorators import staff_member_required
 from django.conf import settings
 from django.http import HttpResponse
-from django.template.loaders import render_to_string
+from django.template.loader import render_to_string
 
 from apps.cart.cart import Cart
 from .forms import OrderCreateForm
