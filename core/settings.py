@@ -132,3 +132,14 @@ BRAINTREE_CONF = braintree.Configuration(
     config('BRAINTREE_PRIVATE_KEY'),
 )
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+    }
+}
+
+# REDIS_HOST = 'localhost'
+# REDIS_PORT = 6379
+# REDIS_DB = 1
+
