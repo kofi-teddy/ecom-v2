@@ -9,7 +9,7 @@ from orders.models import Order
 
 
 @shared_task
-def payment_complete(order_id):
+def payment_completed(order_id):
     '''
     Task to send an email notification when an order
     is successfully created.
