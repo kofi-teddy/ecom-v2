@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from django.core.validators import MinValueValidator, \
     MaxValueValidator
@@ -30,7 +32,9 @@ class Order(models.Model):
         return f'Order {self.id}'
 
     def get_total_cost(self):
-        return sum(item.get_cost() for item in self.items.all())
+        total_cost = sum(item.get_cost() for item in self.items.all())
+        return total_cost - total_cost * \
+            (self.discount / Decimal(100))
 
 
 class OrderItem(models.Model):
