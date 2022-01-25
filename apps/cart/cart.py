@@ -81,6 +81,10 @@ class Cart(object):
 
     @property
     def coupon(self):
+        '''
+        Returns the coupon object with the given id if 
+        the cart contains a coupon_id attribute.
+        '''
         if self.coupon_id:
             try:
                 return Coupon.objects.get(id=self.coupon_id)
@@ -89,10 +93,18 @@ class Cart(object):
         return None
 
     def get_discount(self):
+        '''
+        Retrieves the discount rate from the cart and returns the amount to be
+        deducted for the total amount of the cart.
+        '''
         if self.coupon:
             return(self.coupon.discount / Decimal(100)) \
                 * self.get_total_price()
         return Decimal(0) 
     
     def get_total_price_after_discount(self):
+        '''
+        Return the total amount of the cart after deducting the discount 
+        amount returned by the get_dsicount method.
+        '''
         return self.get_total_price() - self.get_discount()
