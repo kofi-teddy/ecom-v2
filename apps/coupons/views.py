@@ -8,6 +8,9 @@ from .models import Coupon
 
 @require_POST
 def coupon_apply(request):
+    '''
+    A form that applies coupon code on the shoping cart.
+    '''
     now = timezone.now()
     form = CouponApplyForm(request.POST)
     if form.is_valid():
